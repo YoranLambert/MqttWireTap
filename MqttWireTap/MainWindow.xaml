@@ -7,33 +7,29 @@
         mc:Ignorable="d"
         Title="MqttWireTap" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="135*"/>
-            <RowDefinition Height="82*"/>
-        </Grid.RowDefinitions>
-        <ListBox x:Name="MessagesLts" HorizontalAlignment="Left" Height="308" Margin="10,116,0,0" VerticalAlignment="Top" Width="780" Grid.RowSpan="2"/>
-        <ListBox x:Name="SubcribedLts" HorizontalAlignment="Left" Height="101" Margin="261,10,0,0" VerticalAlignment="Top" Width="367">
+        <ListBox x:Name="MessagesLts" Margin="10,115,10,10"/>
+        <ListBox x:Name="SubcribedLts" Height="100" Margin="261,10,172,0" VerticalAlignment="Top">
             <ListBox.InputBindings>
                 <KeyBinding Key="Delete" Command="{Binding UnsubscribeCommand}"/>
             </ListBox.InputBindings>
         </ListBox>
-        <Button x:Name="SubscribeBtn" Content="Subscribe" HorizontalAlignment="Left" Height="30" Margin="10,46,0,0" VerticalAlignment="Top" Width="246" Click="SubscribeBtn_Click"/>
+        <Button x:Name="SubscribeBtn" Content="Subscribe" HorizontalAlignment="Left" Height="30" Margin="10,45,0,0" VerticalAlignment="Top" Width="246" Click="SubscribeBtn_Click"/>
         <xctk:WatermarkTextBox Watermark="Enter a topic to subscribe" x:Name="SubscribeInput" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246">
             <TextBox.InputBindings>
                 <KeyBinding Key="Enter" Command="{Binding SubscribeCommand}"/>
             </TextBox.InputBindings>
         </xctk:WatermarkTextBox>
-        <Button x:Name="UnSubscribeBtn" Content="Unsubscribe" HorizontalAlignment="Left" Height="30" Margin="10,81,0,0" VerticalAlignment="Top" Width="247" Click="UnSubscribeBtn_Click"/>
-        <Button x:Name="ClearBtn" Content="Clear messages" HorizontalAlignment="Left" Height="30" Margin="633,81,0,0" VerticalAlignment="Top" Width="157" Click="ClearBtn_Click"/>
-        <Button x:Name="ModeBtn" Content="Switch mode" HorizontalAlignment="Left" Height="30" Margin="633,46,0,0" VerticalAlignment="Top" Width="157" Click="ModeBtn_Click"/>
-        <Label x:Name="ModeLbl" HorizontalAlignment="Left" Height="31" Margin="633,10,0,0" VerticalAlignment="Top" Width="157"/>
-        <Button x:Name="PublishBtn" Content="Publish" HorizontalAlignment="Left" Height="30" Margin="10,81,0,0" VerticalAlignment="Top" Width="247" Click="PublishBtn_Click" Visibility="Collapsed"/>
-        <xctk:WatermarkTextBox Watermark="Enter a topic" x:Name="TopicInput" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Visibility="Collapsed">
+        <Button x:Name="UnSubscribeBtn" Content="Unsubscribe" HorizontalAlignment="Left" Height="30" Margin="10,80,0,0" VerticalAlignment="Top" Width="246" Click="UnSubscribeBtn_Click"/>
+        <Button x:Name="ClearBtn" Width="157" Content="Clear messages" Height="30" Margin="0,80,10,0" VerticalAlignment="Top" Click="ClearBtn_Click" HorizontalAlignment="Right"/>
+        <Button x:Name="ModeBtn" Width="157" Content="Switch mode" Margin="0,45,10,0" Click="ModeBtn_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Label x:Name="ModeLbl" Width="157" Height="30" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" HorizontalAlignment="Right"/>
+        <Button x:Name="PublishBtn" Content="Publish" HorizontalAlignment="Left" Height="30" Margin="10,80,0,0" VerticalAlignment="Top" Width="247" Click="PublishBtn_Click" Visibility="Collapsed"/>
+        <xctk:WatermarkTextBox Watermark="Enter a topic" x:Name="TopicInput" HorizontalAlignment="Left" Height="30" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Visibility="Collapsed">
             <TextBox.InputBindings>
                 <KeyBinding Key="Enter" Command="{Binding Publish}"/>
             </TextBox.InputBindings>
         </xctk:WatermarkTextBox>
-        <xctk:WatermarkTextBox Watermark="Enter a message" x:Name="MessageInput" HorizontalAlignment="Left" Height="30" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Visibility="Collapsed">
+        <xctk:WatermarkTextBox Watermark="Enter a message" x:Name="MessageInput" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Visibility="Collapsed">
             <TextBox.InputBindings>
                 <KeyBinding Key="Enter" Command="{Binding Publish}"/>
             </TextBox.InputBindings>
